@@ -1,0 +1,6 @@
+-Create a folder for your submission. Naming convetion should be Surname-FirstName
+-If you used multiple HTML pages, external CSS and JS files, organize them inside a single folder, inside YOUR folder.
+-If you used libraries, such as cdn scripts, make sure to import them using the script tag. 
+-Make sure all resources you used for your portfolio are included in your submission. 
+-I will be checking your work by pulling your changes into my local repository, if I am unable to pull your changes I will not be able to grade your work.
+-There is no need to create another branch since you will just be submitting your work using the main branch. MAKE SURE NOT TO OVERWRITE YOUR CLASSMATES' WORK BY DOING SO

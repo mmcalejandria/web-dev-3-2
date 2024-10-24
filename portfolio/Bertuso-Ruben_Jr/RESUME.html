@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RUBEN JR. T. BERTUSO (RESUME)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#resume">RESUME</a></li>
+            <li><a href="PORTFOLIO.html">PORTFOLIO</a></li>
+        </ul>
+    </nav>
+
+    <!-- First Section: Image and Name testing this one -->
+    <div class="header-section">
+        <div class="image-container">
+            <img src="Bertuso_Icon.png" alt="Bertuso_Icon.png" class="profile-picture">
+        </div>
+        <div class="name-section">
+            <h1>RUBEN JR. T. BERTUSO</h1>
+            <p>Backend Developer</p>
+        </div>
+    </div>
+
+
+    <!-- Second Section: Two Columns(containing main details such as background and projects) -->
+    <div class="main-content">
+        <div class="left-column">
+            <br>
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor of Information and Technology, Polytechnic University of the Philippines (Sep 2022 - Jun 2026)
+                <li>
+                <li>Science, Technology, Engineering, and Mathematics, New Era University (Aug 2020 - Jun 2022)</p>
+            </ul>
+            <br>
+            <h2>Skills</h2>
+            <ul>
+                <li>Flutter Flow</li>
+                <li>JavaScript</li>
+                <li>C</li>
+                <li>C#</li>
+                <li>Python</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </div>
+
+        <div class="right-column">
+            <br>
+            <h2>Profile</h2>
+            <p>Possess good communication skills with a strong commitment to work. Mastered the 4Cs: critical thinking,
+                communication, collaboration, and creativity. A team member with great decision-making abilities.</p>
+
+            <h2>Developed Systems With A Team</h2>
+            <p>Vehicle Renting Managemaent System (2024) - Developed the system functions and contributed mostly as
+                a backend developer with Python.
+            </p>
+            <p>Hotel Management System (2024) - Contributed as a front end developer with C#.</p>
+            <p>Inventory Management System (2023) - A Inventory management system that has its common features
+            </p>
+
+            <h2>Individual Projects</h2>
+            <p>NoTo - Student Companion (2024) - A mobile application that has the objective to help students, main features are:
+                schedule manager, budget manager, notepad and a music player created with Flutter Flow.
+            </p>
+            
+
+        </div>
+    </div>
+
+    <!-- Footer that contains my contacts -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Phone: +639272914369</p>
+            <p>Email:
+                <a href="mailto:rubenjrtbertuso@gmail.com" target="_blank">rubenjrtbertuso@gmail.com</a>
+            </p>
+            <p>Address: Nia Village, 70 Kalayaan St, Tandang Sora, Quezon City, 1107 Metro Manila</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            document.querySelector('.main-content').classList.add('animate');
+        }
+        window.onscroll = function() {
+            const footer = document.querySelector('.footer');
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollPosition = window.scrollY + windowHeight;
+
+            if (scrollPosition >= documentHeight) {
+                footer.classList.add('show'); // Add the class to show the footer
+            } else {
+                footer.classList.remove('show'); // Remove the class if not at the bottom
+            }
+        };
+    </script>
+</body>
+
+</html>

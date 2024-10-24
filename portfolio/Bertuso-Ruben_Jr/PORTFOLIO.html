@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RUBEN JR. T. BERTUSO (PORTFOLIO)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="RESUME.html">RESUME</a></li>
+            <li><a href="#portfolio">PORTFOLIO</a></li>
+        </ul>
+    </nav>
+
+    <section class="projects-section">
+        <div class="projects-header">
+            <span class="arrow left-arrow">&#9664;</span> <!-- Left arrow -->
+            <h2 id="projects-title">Team Developed Projects</h2>
+            <span class="arrow right-arrow">&#9654;</span> <!-- Right arrow -->
+        </div>
+        <div class="projects-container" id="projects-container">
+            <div class="project">
+                <img id="project1-img" src="VRMSLPAGE.png" alt="Vehicle Renting Management System">
+                <p id="project1-label">Vehicle Renting Management System</p>
+            </div>
+            <div class="project">
+                <img id="project2-img" src="HMSLPAGE.png" alt="Hotel Management System">
+                <p id="project2-label">Hotel Management System</p>
+            </div>
+            <div class="project">
+                <img id="project3-img" src="IMS.png" alt="Inventory Management System">
+                <p id="project3-label">Inventory Management System</p>
+            </div>
+            <div class="project" style="display: none;" id="project4">
+                <img id="project4-img" src="NOTOSC.png" alt="NoTo: Student Companion">
+                <p id="project4-label">NoTo: Student Companion</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="black-background-section">
+        <div class="content-container" id="content-container">
+            <!-- Initially hidden content for each project -->
+            <div class="project-details" id="vrms-details" style="display: none;">
+                <img src="VRMSDB.png" alt="VRMSDB">
+                <p>On this project, I contributed to building the usable prototype of the system with the core functions and continued doing the backend
+                    implementations up to the finished project, ensuring the requirement features given to me can be found, and validating both
+                    the admin and staff user accounts and the CRUD operations managing vehicles payment and user management.</p>
+            </div>
+
+            <div class="project-details" id="hms-details" style="display: none;">
+                <img src="HMSDB.png" alt="HMSDB">
+                <p>For this project, I worked on the frontend side and handled the creation of some pages, ensuring
+                    friendly UI in the log-in page only ensuing the designated users to log in their accounts
+                     and room reservation creation page complying on all the nescessary fields to be find on room reservation creation page.</p>
+            </div>
+
+            <div class="project-details" id="ims-details" style="display: none;">
+                <img src="IMSDB.png" alt="IMSDB">
+                <p>Helped in creating the wireframe of the system ensured that all the nesecesaary part of UI are 
+                    represented well while focusing on the user experience since we will be using winforms on this project
+                    we ensured that the UI will be matched on the winforms available drag and drop UI elements
+                </p>
+            </div>
+
+            <div class="project-details" id="noto-details" style="display: none;">
+                <img src="NOTODB.png" alt="NOTODB">
+                <p>I created this project, with the goal on fully assisting the students no matter what age on 
+                    their time management, financial literacy and study habits the mobile application
+                    provides students with the features where they can input their schedule in the dashboard, take notes on the notepad section on the dashboard
+                    and assess their budget on the allowance manager page and that the app has a pomodoro technique timer where they
+                    also listen to lo-fi music when they are studying or just taking a break.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Elements to change
+        const title = document.getElementById('projects-title');
+        const project1Img = document.getElementById('project1-img');
+        const project2Img = document.getElementById('project2-img');
+        const project3Img = document.getElementById('project3-img');
+        const project4Img = document.getElementById('project4-img');
+        const project1Label = document.getElementById('project1-label');
+        const project2Label = document.getElementById('project2-label');
+        const project3Label = document.getElementById('project3-label');
+        const project4Label = document.getElementById('project4-label');
+        const container = document.getElementById('projects-container');
+
+        window.onload = function () {
+            document.querySelector('.projects-section').classList.add('fade-in-on-load');
+        }
+
+        let isTeamProjects = true;
+        let isAnimating = false;
+
+        // Function to toggle between projects
+        function toggleProjects(direction) {
+            if (isAnimating) return; 
+            isAnimating = true;
+
+            // Add slide-out animation based on arrow direction
+            if (direction === 'left') {
+                container.classList.add('fade-out-left');
+            } else {
+                container.classList.add('fade-out-right');
+            }
+
+            // Wait for the animation to finish before changing content
+            setTimeout(() => {
+                // Update project content after slide-out
+                if (isTeamProjects) {
+                    // Change to Individual Projects
+                    title.innerText = 'Individual Projects';
+                    project4Img.src = 'NOTOSC.png';
+                    project4Img.alt = 'NoTo - Student Companion';
+                    project1Label.innerText = 'NoTo - Student Companion';
+
+                    // Hide the second and third projects
+                    project1Img.parentElement.style.display = 'none';
+                    project2Img.parentElement.style.display = 'none';
+                    project3Img.parentElement.style.display = 'none';
+                    project4Img.parentElement.style.display = 'block'; // Show NoTo
+                } else {
+                    // Change back to Team Developed Projects
+                    title.innerText = 'Team Developed Projects';
+                    project1Img.src = 'VRMSLPAGE.png';
+                    project1Img.alt = 'Vehicle Renting Management System';
+                    project1Label.innerText = 'Vehicle Renting Management System';
+
+                    project2Img.src = 'HMSLPAGE.png';
+                    project2Img.alt = 'Hotel Management System';
+                    project2Label.innerText = 'Hotel Management System';
+
+                    project3Img.src = 'IMS.png';
+                    project3Img.alt = 'Inventory Management System';
+                    project3Label.innerText = 'Inventory Management System';
+
+                    // Show the second and third projects
+                    project1Img.parentElement.style.display = 'block';
+                    project2Img.parentElement.style.display = 'block';
+                    project3Img.parentElement.style.display = 'block';
+                    project4Img.parentElement.style.display = 'none'; // Hide NoTo
+                }
+
+                // Toggle the flag
+                isTeamProjects = !isTeamProjects;
+
+                // Remove the slide-out class and add the slide-in class
+                if (direction === 'left') {
+                    container.classList.remove('fade-out-left');
+                    container.classList.add('fade-in-left');
+                } else {
+                    container.classList.remove('fade-out-right');
+                    container.classList.add('fade-in-right');
+                }
+
+                // Wait for the slide-in animation to finish
+                setTimeout(() => {
+                    container.classList.remove('fade-in-left', 'fade-in-right');
+                    isAnimating = false; 
+                }, 500); 
+            }, 500); 
+        }
+
+        // Event listeners for the arrows
+        document.querySelector('.left-arrow').addEventListener('click', () => toggleProjects('left'));
+        document.querySelector('.right-arrow').addEventListener('click', () => toggleProjects('right'));
+    </script>
+
+    <script>
+        const vrmsDetails = document.getElementById('vrms-details');
+        const hmsDetails = document.getElementById('hms-details');
+        const imsDetails = document.getElementById('ims-details');
+        const notoDetails = document.getElementById('noto-details');
+
+        // Function to hide all project details
+        function hideAllDetails() {
+            vrmsDetails.style.display = 'none';
+            hmsDetails.style.display = 'none';
+            imsDetails.style.display = 'none';
+            notoDetails.style.display = 'none';
+        }
+
+        
+        project1Img.addEventListener('click', () => {
+            hideAllDetails(); 
+            vrmsDetails.style.display = 'flex'; 
+        });
+
+        project2Img.addEventListener('click', () => {
+            hideAllDetails();
+            hmsDetails.style.display = 'flex';
+        });
+
+        project3Img.addEventListener('click', () => {
+            hideAllDetails();
+            imsDetails.style.display = 'flex';
+        });
+
+        project4Img.addEventListener('click', () => {
+            hideAllDetails();
+            notoDetails.style.display = 'flex';
+        });
+
+        function showProjectDetails(detailsElement) {
+            hideAllDetails(); 
+            detailsElement.style.display = 'flex'; 
+            detailsElement.classList.add('fade-in-on-load'); 
+
+            
+            setTimeout(() => {
+                detailsElement.classList.remove('fade-in-on-load');
+            }, 1000);
+        }
+
+        
+        project1Img.addEventListener('click', () => {
+            showProjectDetails(vrmsDetails);
+        });
+
+        project2Img.addEventListener('click', () => {
+            showProjectDetails(hmsDetails);
+        });
+
+        project3Img.addEventListener('click', () => {
+            showProjectDetails(imsDetails);
+        });
+
+        project4Img.addEventListener('click', () => {
+            showProjectDetails(notoDetails);
+        });
+    </script>
+
+
+</body>
+
+</html>
